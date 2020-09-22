@@ -14,7 +14,7 @@
 */
 
 const inputRef = document.getElementById("validation-input");
-inputRef.addEventListener("focusout", function (event) {
+inputRef.addEventListener("blur", function (event) {
   if (event.target.value.length === Number(inputRef.dataset.length)) {
     inputRef.classList.add("valid");
   } else inputRef.classList.add("invalid");
