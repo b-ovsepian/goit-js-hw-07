@@ -15,7 +15,13 @@
 
 const inputRef = document.getElementById("validation-input");
 inputRef.addEventListener("blur", function (event) {
+  console.log(event.target.value.length);
+  console.log(Number(inputRef.dataset.length));
   if (event.target.value.length === Number(inputRef.dataset.length)) {
     inputRef.classList.add("valid");
-  } else inputRef.classList.add("invalid");
+    inputRef.classList.remove("invalid");
+  } else {
+    inputRef.classList.add("invalid");
+    inputRef.classList.remove("valid");
+  }
 });
